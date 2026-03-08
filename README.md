@@ -10,7 +10,16 @@ A secure, robust RESTful API for managing personal notes. Built with Express, Ty
 
 ---
 
-## 🚀 Features
+## 🌍 Live Deployment Dashboard
+
+**Test the Live API directly in your browser:**
+� **[Interactive Swagger UI Dashboard (Live)](https://notes-api-4d3i.onrender.com/api-docs)** 👈
+
+*(Note: Because this is hosted on a free Render tier, the server will occasionally "spin down" to save resources. If this is your first time visiting the link today, please expect up to **50 seconds of loading time** before the dashboard appears!)*
+
+---
+
+## �🚀 Features
 
 - **🔐 Authentication & Authorization:** Secure user registration, login, and token refresh logic using `bcrypt` and JWTs.
 - **🛡️ Role-Based Access Control (RBAC):** Distinct `USER` and `ADMIN` roles. Admins have absolute system access.
@@ -102,25 +111,6 @@ Here, you can:
 1. Hit `POST /api/auth/register` to create a user.
 2. Hit `POST /api/auth/login` to secure a returning raw JWT Token.
 3. Click **Authorize** at the top right of the dashboard and insert that token to test protected routes.
-
----
-
-## ☁️ Free Cloud Deployment (Render + Supabase)
-
-Because this API uses **PostgreSQL**, it is perfectly primed for free serverless deployments.
-
-### 1. Database (Supabase / Neon)
-1. Go to **Supabase** or **Neon.tech** and create a free PostgreSQL database.
-2. Copy the connection string.
-
-### 2. Hosting (Render / Railway)
-1. Push this repository to GitHub.
-2. Go to **Render.com** and create a new Web Service linked to your GitHub repository.
-3. **Build Command:** `npm install && npx prisma generate && npm run build`
-4. **Start Command:** `npm start`
-5. **Environment Variables:** Add your `DATABASE_URL` and your secret `JWT_SECRET` in the Render dashboard.
-
-Once Render successfully deploys, anyone in the world can hit your API via the URL they provide (e.g., `https://your-api.onrender.com/api-docs`)!
 
 ---
 
