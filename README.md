@@ -19,6 +19,16 @@ A secure, robust RESTful API for managing personal notes. Built with Express, Ty
 
 ---
 
+## 📸 API Previews & Validation
+
+**Input Validation & Error Handling (Zod)**
+![Validation Error](./screenshots/validation-error.png)
+
+**Native Database Relationships (Prisma/PostgreSQL)**
+![Note Created](./screenshots/note-created.png)
+
+---
+
 ## �🚀 Features
 
 - **🔐 Authentication & Authorization:** Secure user registration, login, and token refresh logic using `bcrypt` and JWTs.
@@ -125,17 +135,4 @@ docker build -t notes-api .
 # Run the container
 docker run -p 3000:3000 notes-api
 ```
-
----
-
-## 📸 API Previews & Validation
-
-**Input Validation & Error Handling (Zod)**
-![Validation Error](./screenshots/validation-error.png)
-
-**Native Database Relationships (Prisma/PostgreSQL)**
-![Note Created](./screenshots/note-created.png)
-
-**Swagger Documentation Overview**
-![Documentation Dashboard](./screenshots/dashboard.png)
 
