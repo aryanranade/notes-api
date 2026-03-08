@@ -1,0 +1,24 @@
+# node_modules
+node_modules/
+dist/
+
+# Env vars
+.env
+.env.*
+!.env.example
+
+# database files
+*.db
+*.sqlite
+dev.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS 
+.DS_Store
+
+# Prisma configs
+/generated/prisma
