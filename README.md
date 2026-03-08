@@ -4,9 +4,9 @@
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://expressjs.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](https://www.prisma.io/)
-[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-A secure, robust RESTful API for managing personal notes. Built with Express, TypeScript, SQLite, and Prisma. It natively implements JWT role-based access control (RBAC), input validation via Zod, pagination, note search, and is fully documented interactively with Swagger (OpenAPI 3.0).
+A secure, robust RESTful API for managing personal notes. Built with Express, TypeScript, PostgreSQL, and Prisma. It natively implements JWT role-based access control (RBAC), input validation via Zod, pagination, note search, and is fully documented interactively with Swagger (OpenAPI 3.0).
 
 ---
 
@@ -29,7 +29,7 @@ A secure, robust RESTful API for managing personal notes. Built with Express, Ty
 - **Framework:** Express.js (v5)
 - **Language:** TypeScript
 - **ORM:** Prisma
-- **Database:** SQLite (Local & Zero configuration necessary)
+- **Database:** PostgreSQL (Cloud Ready)
 - **Validation:** Zod
 - **Documentation:** SwaggerUI (YAML)
 
@@ -73,7 +73,7 @@ JWT_SECRET="supersecret_jwt_key_here"
 
 ### 3. Initialize the Database
 
-Push the Prisma model schema to synchronize the local SQLite binary file, then generate the Prisma client mappings:
+Make sure your `.env` `DATABASE_URL` is pointing directly at your local or remote PostgreSQL instance. Then push the schema:
 
 ```bash
 npx prisma db push
@@ -105,7 +105,26 @@ Here, you can:
 
 ---
 
-## 🐳 Docker Deployment
+## ☁️ Free Cloud Deployment (Render + Supabase)
+
+Because this API uses **PostgreSQL**, it is perfectly primed for free serverless deployments.
+
+### 1. Database (Supabase / Neon)
+1. Go to **Supabase** or **Neon.tech** and create a free PostgreSQL database.
+2. Copy the connection string.
+
+### 2. Hosting (Render / Railway)
+1. Push this repository to GitHub.
+2. Go to **Render.com** and create a new Web Service linked to your GitHub repository.
+3. **Build Command:** `npm install && npx prisma generate && npm run build`
+4. **Start Command:** `npm start`
+5. **Environment Variables:** Add your `DATABASE_URL` and your secret `JWT_SECRET` in the Render dashboard.
+
+Once Render successfully deploys, anyone in the world can hit your API via the URL they provide (e.g., `https://your-api.onrender.com/api-docs`)!
+
+---
+
+## 🐳 Docker Local Deployment
 
 To build and run this API completely isolated in a container:
 
