@@ -125,8 +125,17 @@ docker build -t notes-api .
 # Run the container
 docker run -p 3000:3000 notes-api
 ```
-*(Note: Because the database used is SQLite, state will exclusively persist inside the running container footprint unless bound to an external host volume.)*
 
 ---
 
-*(Screenshots to be added below by the Author)*
+## 📸 API Previews & Validation
+
+**Input Validation & Error Handling (Zod)**
+![Validation Error](./screenshots/validation-error.png)
+
+**Native Database Relationships (Prisma/PostgreSQL)**
+![Note Created](./screenshots/note-created.png)
+
+**Swagger Documentation Overview**
+![Documentation Dashboard](./screenshots/dashboard.png)
+
